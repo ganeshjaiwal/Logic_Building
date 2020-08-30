@@ -1,0 +1,43 @@
+#include <stdio.h>
+
+int printAdditionOfNumbersFromRange(int, int);
+
+int main()
+{
+    int min = 0, max = 0, sum = 0;
+    printf("Enter range to print: ");
+    scanf("%d%d", &min, &max);
+    sum = printAdditionOfNumbersFromRange(min, max);
+    printf("Sum of all numbers is: %d.", sum);
+    return 0;
+}
+
+//================================================
+// Name: printAdditionOfNumbersFromRange
+// Input: int, int
+// Output: int
+// Author: Ganesh Narayan Jaiwal
+// Date: 7 Aug 2020
+// Description: Prints addition of all numbers between given range
+//================================================
+
+int printAdditionOfNumbersFromRange(int min, int max)
+{
+    int sum = 0;
+    if (min == max)
+    {
+        printf("Not valid range.");
+        return 0;
+    }
+    if (min > max)
+    {
+        int temp = min;
+        min = max;
+        max = temp;
+    }
+    for (int i = min + 1; i < max; i++)
+    {
+        sum += i;
+    }
+    return sum;
+}
